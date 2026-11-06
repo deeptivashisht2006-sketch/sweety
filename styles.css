@@ -1,0 +1,1139 @@
+/* ==========================================================================
+   BOUCLÉ Botanical Curl Trichology — Master Stylesheet
+   Crafted with 30-Year Veteran UI Mastery: Organic Geometry, Tactile Typography
+   ========================================================================== */
+
+:root {
+  /* Warm Organic Trichology Design Tokens */
+  --c-canvas: #FAF7F2;
+  --c-card: #FFFFFF;
+  --c-card-tint: #F4EFEA;
+  --c-card-inset: #F7F3EE;
+
+  /* Typography Colors */
+  --c-espresso: #201915;
+  --c-espresso-light: #4A3E38;
+  --c-muted: #7E7068;
+  --c-hairline: rgba(32, 25, 21, 0.08);
+  --c-hairline-strong: rgba(32, 25, 21, 0.16);
+
+  /* Botanical Accents */
+  --c-terracotta: #C26D53;
+  --c-terracotta-dark: #A4553D;
+  --c-terracotta-soft: #F9ECE8;
+  --c-amber: #E2A76F;
+  --c-amber-soft: #FDF4EB;
+  --c-sage: #3E5848;
+  --c-sage-soft: #ECF2EE;
+
+  /* Typography */
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Radii & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 9999px;
+
+  --shadow-subtle: 0 2px 8px rgba(32, 25, 21, 0.03), 0 8px 24px rgba(32, 25, 21, 0.04);
+  --shadow-float: 0 16px 36px -4px rgba(32, 25, 21, 0.08), 0 4px 12px rgba(32, 25, 21, 0.03);
+
+  /* Easing curves */
+  --ease-curl: cubic-bezier(0.16, 1, 0.3, 1);
+  --trans-fast: 160ms var(--ease-curl);
+  --trans-smooth: 320ms var(--ease-curl);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--c-canvas);
+  color: var(--c-espresso);
+  line-height: 1.55;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ambient Radial Botanical Atmosphere */
+.ambient-botanical-glow {
+  position: fixed;
+  top: -120px;
+  right: -80px;
+  width: 700px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(194, 109, 83, 0.08) 0%, rgba(62, 88, 72, 0.04) 50%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.site-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 24px 60px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* --------------------------------------------------------------------------
+   Header Architecture
+   -------------------------------------------------------------------------- */
+.atelier-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--c-hairline);
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-crest {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--c-terracotta);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(194, 109, 83, 0.25);
+}
+
+.brand-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.brand-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--c-muted);
+  font-weight: 600;
+}
+
+.cuticle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--c-card);
+  border: 1px solid var(--c-hairline);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--c-espresso-light);
+}
+
+.pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--c-sage);
+}
+
+.atelier-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--c-muted);
+  transition: color var(--trans-fast);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--c-terracotta);
+}
+
+.btn-regimen-pill {
+  background-color: var(--c-espresso);
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color var(--trans-fast);
+}
+
+.btn-regimen-pill:hover {
+  background-color: var(--c-terracotta);
+}
+
+.regimen-count {
+  background-color: var(--c-terracotta);
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+}
+
+/* --------------------------------------------------------------------------
+   Editorial Hero Section
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--c-hairline);
+}
+
+.hero-tag-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--c-terracotta);
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+
+.title-italic {
+  font-style: italic;
+  color: var(--c-terracotta);
+  font-weight: 300;
+}
+
+.hero-subgrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: end;
+  border-top: 1px solid var(--c-hairline);
+  padding-top: 28px;
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--c-espresso-light);
+  max-width: 650px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  border-left: 1px solid var(--c-hairline);
+  padding-left: 32px;
+}
+
+.stat-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--c-espresso);
+  line-height: 1;
+}
+
+.stat-caption {
+  font-size: 0.75rem;
+  color: var(--c-muted);
+  margin-top: 6px;
+  line-height: 1.35;
+}
+
+/* --------------------------------------------------------------------------
+   Shared Section Card Styling
+   -------------------------------------------------------------------------- */
+.section-card {
+  background-color: var(--c-card);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-subtle);
+  transition: box-shadow var(--trans-smooth);
+}
+
+.section-card:hover {
+  box-shadow: var(--shadow-float);
+}
+
+.section-heading {
+  margin-bottom: 28px;
+}
+
+.sec-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--c-terracotta);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.sec-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.sec-sub {
+  font-size: 0.95rem;
+  color: var(--c-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Section 1: Interactive Curl Diagnostic
+   -------------------------------------------------------------------------- */
+.diagnostic-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 36px;
+}
+
+.diag-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.control-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.block-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--c-espresso);
+}
+
+.curl-type-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.curl-type-btn {
+  background-color: var(--c-card-inset);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--radius-md);
+  padding: 16px 14px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all var(--trans-fast);
+}
+
+.curl-type-btn:hover {
+  border-color: var(--c-terracotta);
+  background-color: #FFFFFF;
+}
+
+.curl-type-btn.active {
+  background-color: var(--c-terracotta-soft);
+  border-color: var(--c-terracotta);
+}
+
+.type-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--c-terracotta);
+  letter-spacing: 0.08em;
+}
+
+.type-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.type-desc {
+  font-size: 0.72rem;
+  color: var(--c-muted);
+  line-height: 1.3;
+}
+
+/* Porosity Picker */
+.porosity-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.porosity-btn {
+  background-color: var(--c-card-inset);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--c-espresso-light);
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.porosity-btn:hover {
+  border-color: var(--c-hairline-strong);
+  color: var(--c-espresso);
+}
+
+.porosity-btn.active {
+  background-color: var(--c-card);
+  border-color: var(--c-espresso);
+  font-weight: 700;
+  color: var(--c-espresso);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+/* Visualizer Strand Display */
+.diag-visualizer {
+  background-color: var(--c-card-inset);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.visualizer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vis-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--c-muted);
+}
+
+.vis-pattern-label {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--c-terracotta);
+}
+
+.helix-canvas-wrap {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.helix-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.helix-path {
+  transition: d 400ms var(--ease-curl);
+}
+
+.diag-readout-card {
+  background-color: var(--c-card);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.readout-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.readout-lbl {
+  font-size: 0.72rem;
+  color: var(--c-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.readout-val {
+  color: var(--c-espresso);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Section 2: Humidity & Anti-Frizz Tool
+   -------------------------------------------------------------------------- */
+.humidity-tool {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.humidity-slider-box {
+  background-color: var(--c-card-inset);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slider-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hum-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--c-espresso);
+}
+
+.hum-val {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--c-terracotta);
+}
+
+.boucle-slider {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background-color: #E2DBD2;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.boucle-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--c-terracotta);
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 2px 8px rgba(194, 109, 83, 0.4);
+  cursor: pointer;
+}
+
+.slider-anchors {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--c-muted);
+}
+
+.frizz-prescription-card {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 28px;
+  background-color: var(--c-card-tint);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--radius-md);
+  padding: 28px;
+}
+
+.presc-status-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+}
+
+.badge-warning {
+  background-color: #FEEBC8;
+  color: #C05621;
+}
+.badge-optimal {
+  background-color: #C6F6D5;
+  color: #22543D;
+}
+.badge-dry {
+  background-color: #E2E8F0;
+  color: #4A5568;
+}
+
+.presc-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.presc-desc {
+  font-size: 0.9rem;
+  color: var(--c-espresso-light);
+  line-height: 1.55;
+}
+
+.prescription-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 1px solid var(--c-hairline);
+  padding-left: 28px;
+}
+
+.rec-botanical-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--c-muted);
+}
+
+.ingredient-pill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ing-pill {
+  background-color: var(--c-card);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--c-espresso);
+}
+
+/* --------------------------------------------------------------------------
+   Section 3: Wash-Day Ritual Architect
+   -------------------------------------------------------------------------- */
+.section-top-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.wash-time-badge {
+  background-color: var(--c-terracotta-soft);
+  border: 1px solid var(--c-terracotta);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  color: var(--c-terracotta-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ritual-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.ritual-step-card {
+  background-color: var(--c-card);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  gap: 18px;
+  transition: all var(--trans-fast);
+}
+
+.ritual-step-card:hover {
+  border-color: var(--c-terracotta);
+}
+
+.ritual-step-card:not(.active) {
+  opacity: 0.5;
+  background-color: var(--c-card-inset);
+}
+
+.step-num-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.step-circle {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--c-terracotta);
+}
+
+.step-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--c-terracotta);
+  cursor: pointer;
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.step-tag-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--c-muted);
+}
+
+.step-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--c-espresso);
+}
+
+.step-description {
+  font-size: 0.88rem;
+  color: var(--c-espresso-light);
+  line-height: 1.5;
+}
+
+.step-formula-note {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--c-sage);
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Section 4: Consultation Booking
+   -------------------------------------------------------------------------- */
+.consultation-split {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+}
+
+.consultation-lead {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--c-espresso-light);
+  margin-bottom: 24px;
+}
+
+.clinic-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.perk-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--c-espresso);
+}
+
+.perk-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--c-terracotta-soft);
+  color: var(--c-terracotta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.consult-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-wrap label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--c-espresso);
+}
+
+.field-wrap input, .field-wrap textarea {
+  width: 100%;
+  background-color: var(--c-card-inset);
+  border: 1px solid var(--c-hairline-strong);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--c-espresso);
+  outline: none;
+  transition: border-color var(--trans-fast);
+}
+
+.field-wrap input:focus, .field-wrap textarea:focus {
+  border-color: var(--c-terracotta);
+}
+
+.btn-book-primary {
+  align-self: flex-start;
+  background-color: var(--c-espresso);
+  color: #FFFFFF;
+  border: none;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--trans-fast);
+}
+
+.btn-book-primary:hover {
+  background-color: var(--c-terracotta);
+}
+
+/* --------------------------------------------------------------------------
+   Slide-out Regimen Drawer
+   -------------------------------------------------------------------------- */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(32, 25, 21, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--trans-smooth);
+}
+
+.drawer-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.regimen-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(500px, 100vw);
+  background-color: #FFFFFF;
+  border-left: 1px solid var(--c-hairline-strong);
+  z-index: 210;
+  transform: translateX(100%);
+  transition: transform var(--trans-smooth);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.regimen-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  padding: 24px;
+  border-bottom: 1px solid var(--c-hairline);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.drawer-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--c-terracotta);
+  display: block;
+}
+
+.drawer-heading {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.drawer-close {
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--c-espresso);
+}
+
+.drawer-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.prescription-profile-card {
+  background-color: var(--c-card-inset);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.prof-label {
+  font-size: 0.7rem;
+  color: var(--c-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.prof-sub {
+  font-size: 0.8rem;
+  color: var(--c-muted);
+}
+
+.regimen-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.d-item {
+  background-color: var(--c-canvas);
+  border: 1px solid var(--c-hairline);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.d-item-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.d-item-time {
+  font-size: 0.75rem;
+  color: var(--c-terracotta);
+  font-weight: 700;
+}
+
+.regimen-total-bar {
+  border-top: 1px solid var(--c-hairline);
+  border-bottom: 1px solid var(--c-hairline);
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  color: var(--c-muted);
+}
+
+.total-row strong {
+  color: var(--c-espresso);
+}
+
+.btn-checkout-regimen {
+  background-color: var(--c-terracotta);
+  color: #FFFFFF;
+  border: none;
+  padding: 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--trans-fast);
+}
+
+.btn-checkout-regimen:hover {
+  background-color: var(--c-terracotta-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Global Footer
+   -------------------------------------------------------------------------- */
+.atelier-footer {
+  border-top: 1px solid var(--c-hairline);
+  padding-top: 24px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.8rem;
+  color: var(--c-muted);
+}
+
+.footer-logo {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--c-espresso);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.compliance-tag {
+  background-color: var(--c-card-inset);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Toast
+   -------------------------------------------------------------------------- */
+.boucle-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--c-espresso);
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-float);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: all var(--trans-smooth);
+  z-index: 999;
+}
+
+.boucle-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Rules
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .hero-subgrid {
+    grid-template-columns: 1fr;
+  }
+  .hero-stats {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--c-hairline);
+    padding-top: 20px;
+  }
+  .diagnostic-grid {
+    grid-template-columns: 1fr;
+  }
+  .frizz-prescription-card {
+    grid-template-columns: 1fr;
+  }
+  .prescription-right {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--c-hairline);
+    padding-top: 20px;
+  }
+  .ritual-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .consultation-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .atelier-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .atelier-nav {
+    display: none;
+  }
+  .curl-type-selector {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+

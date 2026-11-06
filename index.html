@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOUCLÉ — Botanical Curl Trichology & Regimen Studio</title>
+  <meta name="description" content="A luxury botanical curl science studio. Interactive curl pattern diagnostics (Type 2A-4C), porosity calculators, and personalized wash-day ritual architect.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Botanical Blur Canvas -->
+  <div class="ambient-botanical-glow" aria-hidden="true"></div>
+
+  <!-- Main Shell -->
+  <div class="site-container">
+    <!-- Top Editorial Header -->
+    <header class="atelier-header">
+      <div class="header-left">
+        <div class="brand">
+          <span class="brand-crest" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.5 8.4C8 18 10 15 10 12c0-2.2 1.8-4 4-4s4 1.8 4 4c0 3-2 6-3.5 8.4 2.7-1.8 4.5-4.9 4.5-8.4 0-5.5-4.5-10-10-10z"/>
+            </svg>
+          </span>
+          <div class="brand-titles">
+            <span class="brand-name">BOUCLÉ</span>
+            <span class="brand-tag">BOTANICAL CURL LAB</span>
+          </div>
+        </div>
+
+        <div class="cuticle-pill">
+          <span class="pill-dot"></span>
+          <span>Trichological Cuticle Standard • pH 4.8 Balanced</span>
+        </div>
+      </div>
+
+      <nav class="atelier-nav" aria-label="Main Navigation">
+        <a href="#diagnostic" class="nav-link active">Curl Diagnostic</a>
+        <a href="#humidity-lab" class="nav-link">Humidity Forecaster</a>
+        <a href="#washday" class="nav-link">Wash-Day Ritual</a>
+        <a href="#apothecary" class="nav-link">Apothecary</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-regimen-pill" id="btnOpenRegimen">
+          <span class="regimen-count" id="regimenCountBadge">4 Steps</span>
+          <span>View Custom Ritual</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Editorial Banner -->
+    <section class="hero-section">
+      <div class="hero-inner">
+        <div class="hero-tag-row">
+          <span class="editorial-caps">[ THE ARCHITECTURE OF TEXTURE ]</span>
+          <span class="origin-tag">PARIS — ATELIER № 04</span>
+        </div>
+
+        <h1 class="hero-title">
+          Honoring the Helix.<br>
+          <span class="title-italic">From Loose Waves to Tight Coils.</span>
+        </h1>
+
+        <div class="hero-subgrid">
+          <p class="hero-description">
+            Curly hair is not a single texture—it is an intricate structural geometry requiring specialized moisture retention, cuticle lipid replenishment, and dew-point alignment. Thirty years of botanical formulation distilled into your bespoke daily ritual.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat-cell">
+              <span class="stat-number">2A &rarr; 4C</span>
+              <span class="stat-caption">Full Spectrum Inclusivity</span>
+            </div>
+            <div class="stat-cell">
+              <span class="stat-number">0%</span>
+              <span class="stat-caption">Sulfates, Silicones & Drying Alcohols</span>
+            </div>
+            <div class="stat-cell">
+              <span class="stat-number">88%</span>
+              <span class="stat-caption">Cuticle Moisture Retention Lift</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Interactive Curl Diagnostic & Helix Simulator -->
+    <section id="diagnostic" class="section-card diagnostic-section">
+      <div class="section-heading">
+        <span class="sec-label">DIAGNOSTIC ENGINE // 01</span>
+        <h2 class="sec-title">Interactive Curl Pattern & Porosity Analyzer</h2>
+        <p class="sec-sub">Select your natural hair architecture to simulate its helical spring tension and hydration requirements:</p>
+      </div>
+
+      <div class="diagnostic-grid">
+        <!-- Controls Column -->
+        <div class="diag-controls">
+          <!-- Step A: Curl Texture Family -->
+          <div class="control-block">
+            <label class="block-title">01. Helical Pattern Classification</label>
+            <div class="curl-type-selector" role="group" aria-label="Select Curl Type">
+              <button class="curl-type-btn" data-type="type-2" data-name="Type 2: Botanical Waves (2A–2C)" data-spring="loose" data-moisture="Lightweight Hydration">
+                <span class="type-badge">TYPE 2</span>
+                <span class="type-name">Waves</span>
+                <span class="type-desc">Loose S-shape, easily weighed down</span>
+              </button>
+              <button class="curl-type-btn active" data-type="type-3" data-name="Type 3: Defined Curls (3A–3C)" data-spring="medium" data-moisture="Deep Moisture & Definition">
+                <span class="type-badge">TYPE 3</span>
+                <span class="type-name">Curls</span>
+                <span class="type-desc">Spring-loaded ringlets & corkscrews</span>
+              </button>
+              <button class="curl-type-btn" data-type="type-4" data-name="Type 4: High-Density Coils (4A–4C)" data-spring="tight" data-moisture="Rich Lipid Sealing Butter">
+                <span class="type-badge">TYPE 4</span>
+                <span class="type-name">Coils</span>
+                <span class="type-desc">Tight zig-zag & micro-helical density</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step B: Hair Porosity Picker -->
+          <div class="control-block">
+            <label class="block-title">02. Cuticle Porosity (Moisture Absorption Rate)</label>
+            <div class="porosity-picker" role="group" aria-label="Select Hair Porosity">
+              <button class="porosity-btn" data-porosity="low" data-rule="Needs steam & light water-soluble humectants (Aloe Vera & Hyaluronic)">Low Porosity (Tight Cuticles)</button>
+              <button class="porosity-btn active" data-porosity="medium" data-rule="Balanced cuticles — responds well to flaxseed gel & hydrolyzed silk">Medium / Balanced</button>
+              <button class="porosity-btn" data-porosity="high" data-rule="Raised cuticles — requires heavy lipids (Murumuru butter & Baobab oil) to seal moisture">High Porosity (Open Cuticles)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visualizer & Trichology Specimen Display -->
+        <div class="diag-visualizer">
+          <div class="visualizer-header">
+            <span class="vis-tag">CUTICLE CROSS-SECTION SIMULATION</span>
+            <span class="vis-pattern-label" id="currentPatternBadge">Type 3B Corkscrew Helix</span>
+          </div>
+
+          <!-- Dynamic SVG Helix Canvas -->
+          <div class="helix-canvas-wrap">
+            <svg class="helix-svg" viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="curlGoldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#E2A76F"/>
+                  <stop offset="50%" stop-color="#C26D53"/>
+                  <stop offset="100%" stop-color="#7B3E2D"/>
+                </linearGradient>
+              </defs>
+              <line x1="20" y1="110" x2="380" y2="110" stroke="rgba(194, 109, 83, 0.2)" stroke-dasharray="3 3"/>
+              
+              <!-- Animated Strand Path -->
+              <path id="helixStrandPath" class="helix-path" d="M 30 110 Q 70 30 110 110 T 190 110 T 270 110 T 350 110" stroke="url(#curlGoldGradient)" stroke-width="4.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <!-- Diagnostic Result Summary -->
+          <div class="diag-readout-card">
+            <div class="readout-row">
+              <span class="readout-lbl">Hydration Strategy:</span>
+              <strong id="readoutMoisture" class="readout-val">Deep Moisture & Definition</strong>
+            </div>
+            <div class="readout-row">
+              <span class="readout-lbl">Cuticle Porosity Rule:</span>
+              <span id="readoutPorosity" class="readout-val">Balanced cuticles — responds well to flaxseed gel & silk</span>
+            </div>
+            <div class="readout-row">
+              <span class="readout-lbl">Shrinkage Factor:</span>
+              <span id="readoutShrinkage" class="readout-val">30% – 50% Natural Springback</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Real-time Atmospheric Humidity & Dew Point Forecaster -->
+    <section id="humidity-lab" class="section-card humidity-section">
+      <div class="section-heading">
+        <span class="sec-label">METEOROLOGICAL HAIR SCIENCE // 02</span>
+        <h2 class="sec-title">Atmospheric Dew Point & Anti-Frizz Forecaster</h2>
+        <p class="sec-sub">Drag the environmental humidity slider to see how airborne moisture impacts your curl cast and which botanical ingredients will lock out frizz:</p>
+      </div>
+
+      <div class="humidity-tool">
+        <div class="humidity-slider-box">
+          <div class="slider-title-row">
+            <span class="hum-label">Relative Atmospheric Humidity:</span>
+            <span class="hum-val" id="humidityDisplay">65% (Tropical & Humid)</span>
+          </div>
+          <input type="range" id="humiditySlider" min="15" max="95" step="1" value="65" class="boucle-slider" aria-label="Adjust relative humidity">
+          <div class="slider-anchors">
+            <span>15% Desert Arid</span>
+            <span>45% Temperate Baseline</span>
+            <span>95% High Humidity Frizz-Risk</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Recommendation Card -->
+        <div class="frizz-prescription-card" id="frizzPrescription">
+          <div class="prescription-left">
+            <span class="presc-status-badge badge-warning" id="humidityStatusBadge">High Frizz Vulnerability</span>
+            <h3 class="presc-title" id="humidityTitle">Film-Forming Cast Required</h3>
+            <p class="presc-desc" id="humidityAdvice">
+              High humidity pulls moisture into the hair cortex, causing curls to expand and lose definition. Use flaxseed or marshmallow root gel to form a flexible botanical cast that seals the cuticle against moisture vapor.
+            </p>
+          </div>
+          <div class="prescription-right">
+            <span class="rec-botanical-tag">RECOMMENDED INGREDIENTS:</span>
+            <div class="ingredient-pill-list" id="ingredientList">
+              <span class="ing-pill">Organic Flaxseed Gel</span>
+              <span class="ing-pill">Marshmallow Root Mucilage</span>
+              <span class="ing-pill">Pracaxi Seed Oil</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Wash-Day Ritual Architect (Interactive Stepper) -->
+    <section id="washday" class="section-card washday-section">
+      <div class="section-top-between">
+        <div>
+          <span class="sec-label">REGIMEN ARCHITECT // 03</span>
+          <h2 class="sec-title">Wash-Day Botanical Ritual</h2>
+          <p class="sec-sub">Customize and activate the steps of your personalized wash day routine:</p>
+        </div>
+        <div class="wash-time-badge">
+          <span>Estimated Ritual Time:</span>
+          <strong id="ritualTimeTotal">40 Minutes</strong>
+        </div>
+      </div>
+
+      <!-- Routine Steps Accordion/Grid -->
+      <div class="ritual-steps-grid">
+        <!-- Step 1 -->
+        <article class="ritual-step-card active" data-step="1" data-time="10">
+          <div class="step-num-col">
+            <span class="step-circle">01</span>
+            <input type="checkbox" checked class="step-checkbox" aria-label="Include step 1">
+          </div>
+          <div class="step-content">
+            <div class="step-tag-row">
+              <span class="step-phase">PREPARATION & CLEANSE</span>
+              <span class="step-time">10 Min</span>
+            </div>
+            <h3 class="step-title">Botanical Baobab & Mint Co-Wash</h3>
+            <p class="step-description">Sulfate-free creamy emulsion that gently dissolves sebum without stripping essential sebum lipids from the cuticle.</p>
+            <div class="step-formula-note">pH 5.0 • Infused with organic spearmint leaf and aloe leaf juice.</div>
+          </div>
+        </article>
+
+        <!-- Step 2 -->
+        <article class="ritual-step-card active" data-step="2" data-time="15">
+          <div class="step-num-col">
+            <span class="step-circle">02</span>
+            <input type="checkbox" checked class="step-checkbox" aria-label="Include step 2">
+          </div>
+          <div class="step-content">
+            <div class="step-tag-row">
+              <span class="step-phase">DEEP MOISTURE INFUSION</span>
+              <span class="step-time">15 Min</span>
+            </div>
+            <h3 class="step-title">Murumuru & Cupuaçu Melt Mask</h3>
+            <p class="step-description">Penetrates deep into the cortex with omega fatty acids to restore elasticity, improve bounce, and detangle with zero breakage.</p>
+            <div class="step-formula-note">Rich Amazonian butter lipid therapy with thermal heat cap compatibility.</div>
+          </div>
+        </article>
+
+        <!-- Step 3 -->
+        <article class="ritual-step-card active" data-step="3" data-time="10">
+          <div class="step-num-col">
+            <span class="step-circle">03</span>
+            <input type="checkbox" checked class="step-checkbox" aria-label="Include step 3">
+          </div>
+          <div class="step-content">
+            <div class="step-tag-row">
+              <span class="step-phase">PRIMING & HYDRATION</span>
+              <span class="step-time">10 Min</span>
+            </div>
+            <h3 class="step-title">Agave Nectar Silk Leave-In Conditioner</h3>
+            <p class="step-description">Lightweight water-attracting humectants that smooth down the cuticle scales, creating a frictionless base for curl clumping.</p>
+            <div class="step-formula-note">Apply to soaking wet strands using the "praying hands" technique.</div>
+          </div>
+        </article>
+
+        <!-- Step 4 -->
+        <article class="ritual-step-card active" data-step="4" data-time="5">
+          <div class="step-num-col">
+            <span class="step-circle">04</span>
+            <input type="checkbox" checked class="step-checkbox" aria-label="Include step 4">
+          </div>
+          <div class="step-content">
+            <div class="step-tag-row">
+              <span class="step-phase">CAST FORMATION & DEFINITION</span>
+              <span class="step-time">5 Min</span>
+            </div>
+            <h3 class="step-title">Golden Flaxseed Curl Defining Glaze</h3>
+            <p class="step-description">Creates a crisp protective cast around each individual curl clump that dries frizz-free and scrunches out with touchable soft volume.</p>
+            <div class="step-formula-note">Zero flake, non-sticky polymer matrix with marula oil drops.</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 4: Apothecary & Consultation Booking -->
+    <section id="apothecary" class="section-card consultation-section">
+      <div class="consultation-split">
+        <div class="consultation-info">
+          <span class="sec-label">DIRECT TRICHOLOGY ACCESS // 04</span>
+          <h2 class="sec-title">Virtual Trichology Consultations</h2>
+          <p class="consultation-lead">
+            Speak directly with a certified curl specialist to assess scalp health, transit damage, and craft a 90-day restorative botanical protocol.
+          </p>
+          <div class="clinic-perks">
+            <div class="perk-item">
+              <span class="perk-icon">✓</span>
+              <span>1-on-1 Digital Microscopy Hair Analysis</span>
+            </div>
+            <div class="perk-item">
+              <span class="perk-icon">✓</span>
+              <span>Custom-compounded Botanical Formulas</span>
+            </div>
+            <div class="perk-item">
+              <span class="perk-icon">✓</span>
+              <span>Seasonal Wash-Day Adjustments</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consultation Form -->
+        <form class="consult-form" id="consultationForm" onsubmit="return false;">
+          <div class="form-row">
+            <div class="field-wrap">
+              <label for="consultName">Your Name</label>
+              <input type="text" id="consultName" required placeholder="Amara Vance">
+            </div>
+            <div class="field-wrap">
+              <label for="consultEmail">Email Address</label>
+              <input type="email" id="consultEmail" required placeholder="amara@domain.com">
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label for="consultChallenge">Current Curl Challenge / Hair History</label>
+            <textarea id="consultChallenge" rows="3" required placeholder="e.g. Struggling with crown frizz in high humidity, looking for lightweight volume on 3B curls..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-book-primary" id="btnSubmitConsult">Reserve Atelier Consultation &rarr;</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Side Slide-out Drawer: Regimen Summary & Formulas -->
+    <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+    <aside class="regimen-drawer" id="regimenDrawer" aria-hidden="true" role="dialog" aria-labelledby="drawerHeading">
+      <div class="drawer-header">
+        <div>
+          <span class="drawer-eyebrow">YOUR BESPOKE PRESCRIPTION</span>
+          <h3 class="drawer-heading" id="drawerHeading">Wash-Day Ritual Basket</h3>
+        </div>
+        <button class="drawer-close" id="btnCloseDrawer" aria-label="Close custom ritual drawer">&times;</button>
+      </div>
+
+      <div class="drawer-body">
+        <div class="prescription-profile-card">
+          <span class="prof-label">Active Diagnostic Profile:</span>
+          <strong id="drawerProfileName">Type 3 Curls • Medium Porosity</strong>
+          <span class="prof-sub" id="drawerProfileAdvice">Optimized for clump definition and humidity resistance.</span>
+        </div>
+
+        <div class="regimen-items-list" id="drawerItemsList">
+          <!-- Dynamically populated steps -->
+        </div>
+
+        <div class="regimen-total-bar">
+          <div class="total-row">
+            <span>Total Steps Selected:</span>
+            <strong id="drawerTotalSteps">4 of 4 Steps</strong>
+          </div>
+          <div class="total-row">
+            <span>Estimated Ritual Duration:</span>
+            <strong id="drawerTotalTime">40 Minutes</strong>
+          </div>
+        </div>
+
+        <button class="btn-checkout-regimen" id="btnExportRitual">Export & Print Custom Routine Card</button>
+      </div>
+    </aside>
+
+    <!-- Global Footer -->
+    <footer class="atelier-footer">
+      <div class="footer-inner">
+        <div class="footer-col-main">
+          <span class="footer-logo">BOUCLÉ ATELIER</span>
+          <p>© 2026 BOUCLÉ Trichology Laboratories. All rights reserved.</p>
+        </div>
+        <div class="footer-col-meta">
+          <span>Typography: Fraunces & Plus Jakarta Sans</span>
+          <span>Standards: Zero Sulfates, Silicones, Parabens</span>
+        </div>
+        <div class="footer-col-badge">
+          <span class="compliance-tag">WCAG AAA Certified Contrast</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Toast Alert -->
+  <div class="boucle-toast" id="boucleToast">Ritual updated.</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
